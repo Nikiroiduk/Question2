@@ -1,0 +1,11 @@
+F:\Question2\Question2\bin\Debug\net8.0\Question2.deps.json
+F:\Question2\Question2\bin\Debug\net8.0\Question2.dll
+F:\Question2\Question2\bin\Debug\net8.0\Question2.pdb
+F:\Question2\Question2\obj\Debug\net8.0\Question2.GeneratedMSBuildEditorConfig.editorconfig
+F:\Question2\Question2\obj\Debug\net8.0\Question2.AssemblyInfoInputs.cache
+F:\Question2\Question2\obj\Debug\net8.0\Question2.AssemblyInfo.cs
+F:\Question2\Question2\obj\Debug\net8.0\Question2.csproj.CoreCompileInputs.cache
+F:\Question2\Question2\obj\Debug\net8.0\Question2.dll
+F:\Question2\Question2\obj\Debug\net8.0\refint\Question2.dll
+F:\Question2\Question2\obj\Debug\net8.0\Question2.pdb
+F:\Question2\Question2\obj\Debug\net8.0\ref\Question2.dll
