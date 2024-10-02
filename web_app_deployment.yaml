@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  labels:
+    app: web-app
+spec:
+  replicas: 3  # Три пода
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: your-docker-image:latest
+        resources:
+          requests:
+            memory: "128Mi"  # Минимальное количество памяти
+            cpu: "0.1"  # Минимальное использование CPU после инициализации
+          limits:
+            memory: "128Mi"
+            cpu: "1"  # Ограничение на 1 CPU при инициализации
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /readiness  # Путь для проверки готовности приложения
+            port: 80
+          initialDelaySeconds: 10  # Задержка для инициализации
+          periodSeconds: 5  # Интервал между проверками
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - web-app
+            topologyKey: "kubernetes.io/hostname"  # Запрещает запуск нескольких подов на одной ноде
